@@ -161,3 +161,43 @@
 ### 遗留问题（重要）
 - 真实数据源（`company_website` 等）与牛客招聘接口仍未接入；当前主数据来自 `seed` 演示源。
   这是下一步 P1 的关键工作。RSS 的 `SITE_LINK` 为占位域名，上线后需替换为实际站点地址。
+
+---
+
+## 阶段 6：接入真实数据源（应届生求职网）（2025-06-10）
+
+### 前置条件
+- 阶段 5 已具备 RSS/CI/CD/部署能力，但站点仍展示 `seed` 演示数据。
+- 目标：接入真实、稳定的校招/实习数据，替换演示数据。
+
+### 侦察过程与结论
+- **牛客网**：实测公开接口 `/jobs/intern/` 等已失效（加载 404 JS）；`/completeness/all-career-jobs`
+  只返回岗位分类树，不是岗位列表；讨论区全是面经/笔试噪声。结论：不稳定，弃用。
+- **腾讯等大厂官网**：`careers.tencent.com/api/post/Query` 返回 2261 条真实岗位 JSON，但**全是社招**
+  （工作年限三年/五年），实习/应届岗位为 0。结论：不含实习数据，不满足需求。
+- **应届生求职网（51job 旗下）**：`m.yingjiesheng.com` 移动端 SSR 页，含结构化职位条目：
+  标题、薪资、公司、城市、学历、jobdetail 投递深链，**且 tags 含「在校生/应届生」**。
+  结论：稳定、真实、字段齐全，符合「只要校招/实习」的定位。
+
+### 产出
+- 新增 [`collector/sources/yingjiesheng.py`](../collector/sources/yingjiesheng.py)：
+  - 抓取移动端首页，解析职位条目（title/salary/company/city/tags/jobdetail）。
+  - **只保留校招/实习**（tags 含「在校生/应届生」），丢弃社招岗位。
+  - 投递 `applyUrl` 指向真实 `jobdetail/<id>` 深链（已验证可访问，含投递入口）。
+- 更新 `registry.py`：主力为 `yingjiesheng`，停用 `nowcoder` 与 `seed`（注释保留可回退）。
+- 前端 `InternCard.tsx`：新增来源中文标签 `yingjiesheng → 应届生求职网`。
+- 同步文档：`docs/data/schema.md` 更新 source 枚举；`docs/architecture/collector.md`、
+  `overview.md` 更新数据源说明。
+
+### 验证方式
+- `python collector/run.py` 成功：采集到 **15 条真实校招/实习**（纯 `yingjiesheng`，无演示数据）。
+- 用 Python 校验 JSON：15 条均为真实公司/岗位/薪资/城市，`applyUrl` 为真实 `jobdetail` 深链。
+- `npm run build` 通过；headless Edge 截图确认页面展示**全部真实数据**，
+  来源标签正确显示「应届生求职网」，共 15 个机会。
+- 数据量：单次运行约 8~15 条（首页为推荐流，数量变动属正常），符合校招/实习定位。
+
+### 遗留问题
+- 单次数据量有限（首页推荐流 8~15 条）；后续可扩展到 `/searchresult/k实习` 等分类入口
+  或增加分页以扩充数据量。
+- 服务端渲染结构如有变动可能影响解析，需定期验证采集稳定性。
+- RSS 的 `SITE_LINK` 仍为占位域名。

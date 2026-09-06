@@ -4,92 +4,113 @@
     <title>大厂实习信息聚合</title>
     <link>https://example.internship-hub</link>
     <description>汇聚各大互联网/科技公司实习机会，一键直达官方投递渠道，每日更新。</description>
-    <lastBuildDate>Sun, 06 Sep 2026 15:41:13 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 16:02:47 +0800</lastBuildDate>
     <generator>internship-hub</generator>
     <ttl>60</ttl>
     <item>
-      <title>字节跳动 · 后端开发实习生（推荐系统方向）</title>
-      <link>https://jobs.bytedance.com/experienced/position/example-001</link>
-      <guid isPermaLink="false">seed_f833d4db88</guid>
-      <pubDate>Sun, 06 Sep 2026 15:41:15 +0800</pubDate>
-      <description>参与推荐系统服务端核心模块开发，与资深工程师并肩工作。</description>
+      <title>日邮物流（中国） · 物流培训生（重庆）MJ000319</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173231336</link>
+      <guid isPermaLink="false">yingjiesheng_2792a5d0f0</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>8千-1万 · 本科</description>
     </item>
     <item>
-      <title>腾讯 · 前端开发实习生（微信生态）</title>
-      <link>https://careers.tencent.com/jobdesc.html?postId=example-002</link>
-      <guid isPermaLink="false">seed_2c99601887</guid>
-      <pubDate>Sun, 06 Sep 2026 15:41:15 +0800</pubDate>
-      <description>负责微信生态相关产品前端开发与体验优化。</description>
+      <title>前锦网络信息技术（上海） · 系统设计岗</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173508904</link>
+      <guid isPermaLink="false">yingjiesheng_0878669c25</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>2.9-3.5万 · 博士</description>
     </item>
     <item>
-      <title>阿里巴巴 · 算法工程师实习生（大模型方向）</title>
-      <link>https://talent.alibaba.com/off-campus/position-detail?lang=zh&amp;positionId=example-003</link>
-      <guid isPermaLink="false">seed_3a2f2c0801</guid>
-      <pubDate>Sat, 05 Sep 2026 15:41:15 +0800</pubDate>
-      <description>参与大模型训练与推理优化项目，探索前沿 AI 应用。</description>
+      <title>前锦网络信息技术（上海） · 信号处理设计岗-数据链方向</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173508118</link>
+      <guid isPermaLink="false">yingjiesheng_efd5bcac13</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>2.9-3.5万 · 博士</description>
     </item>
     <item>
-      <title>美团 · 数据分析实习生</title>
-      <link>https://zhaopin.meituan.com/web/position/detail?jobSequence=example-004</link>
-      <guid isPermaLink="false">seed_7276221ed9</guid>
-      <pubDate>Sat, 05 Sep 2026 15:41:15 +0800</pubDate>
-      <description>负责业务数据洞察与指标体系建设，支撑决策。</description>
+      <title>前锦网络信息技术（上海） · 信号处理设计岗-引信方向</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173508699</link>
+      <guid isPermaLink="false">yingjiesheng_9b5cbb54a6</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>2.9-3.5万 · 博士</description>
     </item>
     <item>
-      <title>拼多多 · 产品经理实习生（B端）</title>
-      <link>https://careers.pinduoduo.com/jobs/detail/example-005</link>
-      <guid isPermaLink="false">seed_190f692a85</guid>
-      <pubDate>Fri, 04 Sep 2026 15:41:15 +0800</pubDate>
-      <description>参与供应链 B 端产品设计与需求分析。</description>
+      <title>上海兆芯集成电路 · 08-SH-系统建模与性能分析工程师</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173106976</link>
+      <guid isPermaLink="false">yingjiesheng_24986565a9</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>2-3万·15薪 · 硕士</description>
     </item>
     <item>
-      <title>网易 · 游戏客户端开发实习生</title>
-      <link>https://game.163.com/recruitment/internship/detail/example-006</link>
-      <guid isPermaLink="false">seed_307d227ad0</guid>
-      <pubDate>Thu, 03 Sep 2026 15:41:15 +0800</pubDate>
-      <description>参与自研游戏引擎客户端功能开发。</description>
+      <title>上海紫江（集团） · 财务/会计助理</title>
+      <link>https://m.yingjiesheng.com/jobdetail/78171417</link>
+      <guid isPermaLink="false">yingjiesheng_8b14703f53</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>9千-1.2万·13薪 · 本科</description>
     </item>
     <item>
-      <title>京东 · 运营实习生（电商增长）</title>
-      <link>https://zhaopin.jd.com/web/job/internship/detail/example-007</link>
-      <guid isPermaLink="false">seed_07f9b64991</guid>
-      <pubDate>Wed, 02 Sep 2026 15:41:15 +0800</pubDate>
-      <description>负责电商活动运营与用户增长策略落地。</description>
+      <title>深圳华大基因科技 · 平面设计实习生</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173508879</link>
+      <guid isPermaLink="false">yingjiesheng_be6a4e497a</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>150元/天 · 本科</description>
     </item>
     <item>
-      <title>百度 · 视觉算法实习生</title>
-      <link>https://talent.baidu.com/jobs/detail/example-008</link>
-      <guid isPermaLink="false">seed_bf1c2c9cde</guid>
-      <pubDate>Tue, 01 Sep 2026 15:41:15 +0800</pubDate>
-      <description>参与计算机视觉算法研究与落地。</description>
+      <title>中研复材（上海）科技开发 · 高级研发工程师（2025、2026届）</title>
+      <link>https://m.yingjiesheng.com/jobdetail/169112233</link>
+      <guid isPermaLink="false">yingjiesheng_47c57c2b8a</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>2-3万 · 博士</description>
     </item>
     <item>
-      <title>小红书 · UI 设计实习生</title>
-      <link>https://job.xiaohongshu.com/jobs/detail/example-009</link>
-      <guid isPermaLink="false">seed_1e4415d237</guid>
-      <pubDate>Mon, 31 Aug 2026 15:41:15 +0800</pubDate>
-      <description>参与产品界面设计与视觉规范建设。</description>
+      <title>北京大成律师事务所 · 实习生（二）（金融专业方向）</title>
+      <link>https://m.yingjiesheng.com/jobdetail/153984669</link>
+      <guid isPermaLink="false">yingjiesheng_d1022bea93</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>200元/天 · 硕士</description>
     </item>
     <item>
-      <title>哔哩哔哩 · 市场品牌实习生</title>
-      <link>https://jobs.bilibili.com/social/position/detail/example-010</link>
-      <guid isPermaLink="false">seed_99add9c9ab</guid>
-      <pubDate>Sun, 30 Aug 2026 15:41:15 +0800</pubDate>
-      <description>参与品牌营销活动策划与执行。</description>
+      <title>上海陆家嘴物业管理 · （上海国企）物业设备设施2027届实习生</title>
+      <link>https://m.yingjiesheng.com/jobdetail/172969501</link>
+      <guid isPermaLink="false">yingjiesheng_f6d4e9f100</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>140元/天 · 大专</description>
     </item>
     <item>
-      <title>快手 · 数据分析实习生（商业化）</title>
-      <link>https://zhaopin.kuaishou.cn/recruit/e/#/jobDetail/example-011</link>
-      <guid isPermaLink="false">seed_e7f9720ef3</guid>
-      <pubDate>Sat, 29 Aug 2026 15:41:15 +0800</pubDate>
-      <description>负责商业化业务数据分析与策略支持。</description>
+      <title>海南德镁医药科技 · 27届实习医药代表（base东莞）</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173055811</link>
+      <guid isPermaLink="false">yingjiesheng_22e42e3b97</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>200元/天 · 本科</description>
     </item>
     <item>
-      <title>滴滴 · 后端开发实习生（服务端）</title>
-      <link>https://talent.didiglobal.com/jobs/detail/example-012</link>
-      <guid isPermaLink="false">seed_55a72b078b</guid>
-      <pubDate>Fri, 28 Aug 2026 15:41:15 +0800</pubDate>
-      <description>参与出行服务端系统开发与稳定性建设。</description>
+      <title>卡尔玛物流装备（中国） · 实习生，质量环境健康安全</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173384912</link>
+      <guid isPermaLink="false">yingjiesheng_1662bfe74b</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>200元/天 · 本科</description>
+    </item>
+    <item>
+      <title>北京海博思创科技 · 结构设计工程师 MJ001127</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173516995</link>
+      <guid isPermaLink="false">yingjiesheng_8564732e4f</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>2-3万 · 硕士</description>
+    </item>
+    <item>
+      <title>阳光数智科技 · 数科AI应用算法工程师｜2027科技培训生(J19560)</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173484180</link>
+      <guid isPermaLink="false">yingjiesheng_f2c92b2a12</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>1.8-3万 · 硕士</description>
+    </item>
+    <item>
+      <title>北京城建集团 · 造价工程师-城建七公司（河北省）</title>
+      <link>https://m.yingjiesheng.com/jobdetail/173434408</link>
+      <guid isPermaLink="false">yingjiesheng_5ea9265d27</guid>
+      <pubDate>Sun, 06 Sep 2026 16:02:47 +0800</pubDate>
+      <description>7千-1万 · 本科</description>
     </item>
   </channel>
 </rss>

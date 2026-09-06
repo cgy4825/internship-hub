@@ -74,8 +74,10 @@
 `技术` / `产品` / `运营` / `设计` / `市场` / `数据` / `职能` / `其他`
 
 ### source
-- `nowcoder` —— 牛客网
+- `yingjiesheng` —— 应届生求职网（51job 旗下，校招/实习主要来源）
+- `nowcoder` —— 牛客网（当前已停用：讨论区噪声大、接口不稳定）
 - `company_website` —— 公司官方校招网站
+- `seed` —— 演示数据（已停用：接入真实源后不再参与采集）
 - 自定义：新增源需在 [`architecture/collector.md`](../architecture/collector.md) 登记。
 
 ## 4. 校验规则

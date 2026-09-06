@@ -12,9 +12,9 @@
 
 ## 下一步（P1）
 
-- [ ] **接入真实有效数据源**：
-  - 接入各公司**官方校招/招聘网站**（补全 `company_website` 源，字节/腾讯/阿里/美团等）。
-  - 牛客网改为抓取**招聘/实习接口或板块**，替代噪声较多的讨论区；扩充公司名抽取。
+- [x] **接入真实有效数据源**：接入**应届生求职网（51job）**为主力源，提供真实校招/实习岗位（`yingjiesheng`）。
+  - [ ] 扩充数据量：扩展 `/searchresult/k实习` 等分类入口或分页，稳定获取更多校招/实习岗位。
+  - [ ] （可选）补充各公司**官方校招网站**（`company_website`，公开接口多为社招，实习需单独适配）。
 - [x] **每日自动更新**：配置 GitHub Actions cron 定时运行采集器并提交 JSON（`.github/workflows/collect-daily.yml`）。
 - [x] **部署到 Vercel / GitHub Pages**（免费静态托管，配置见 `web/vercel.json` 与 `.github/workflows/deploy-pages.yml`）。
 - [x] **提醒功能**：生成 RSS feed（`data/feed.xml`，静态文件即可），供订阅。

@@ -10,6 +10,7 @@ const SOURCE_LABEL: Record<string, string> = {
   nowcoder: '牛客网',
   company_website: '公司官网',
   seed: '演示数据',
+  yingjiesheng: '应届生求职网',
 }
 
 function sourceLabel(source: string): string {
