@@ -106,6 +106,34 @@ export function InternCard({ item, favorite, onToggleFavorite }: InternCardProps
         {item.title}
       </h3>
 
+      {/* 关键元信息：薪资/学历/实习时长/公司规模 */}
+      {(item.summary || item.education || item.workDuration || item.companyType) && (
+        <div className="mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+          {item.summary && (
+            <span className="inline-flex items-center font-medium text-amber-600">
+              {item.summary}
+            </span>
+          )}
+          {item.workDuration && (
+            <span className="inline-flex items-center gap-0.5 text-slate-400">
+              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+              {item.workDuration}
+            </span>
+          )}
+          {item.companyType && (
+            <span className="inline-flex items-center gap-0.5 text-slate-400">
+              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 21V8l7-4v3M10 21V7l8 4v10M3 21h18" />
+              </svg>
+              {item.companyType}
+            </span>
+          )}
+        </div>
+      )}
+
       {/* 标签 */}
       <div className="mt-2.5 flex flex-wrap gap-1.5">
         <span className="inline-flex items-center rounded-md bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-600">
@@ -114,6 +142,11 @@ export function InternCard({ item, favorite, onToggleFavorite }: InternCardProps
         {item.category && (
           <span className="inline-flex items-center rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
             {item.category}
+          </span>
+        )}
+        {item.education && (
+          <span className="inline-flex items-center rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-600">
+            {item.education}
           </span>
         )}
         {(item.tags ?? []).slice(0, 3).map((tag) => (

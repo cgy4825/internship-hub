@@ -21,6 +21,12 @@ export interface InternshipItem {
   category: string
   tags?: string[]
   summary?: string
+  /** 学历要求（如 本科/硕士/博士/大专） */
+  education?: string
+  /** 实习周期/时长（如 `5天/周·3个月`） */
+  workDuration?: string
+  /** 公司类型/规模/行业（如 `民营·1000-5000人·制药/生物工程`） */
+  companyType?: string
   applyUrl: string
   sourceUrl?: string
   source: DataSource

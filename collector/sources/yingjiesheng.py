@@ -82,6 +82,7 @@ def _extract_items(html: str) -> list[dict[str, Any]]:
         salary = re.search(r'class="job-salary[^"]*"[^>]*>([^<]+)', record)
         comp = re.search(r'class="company-title[^"]*"[^>]*>([^<]+)', record)
         addr = re.search(r'class="company-address[^"]*"[^>]*>([^<]+)', record)
+        comp_type = re.search(r'class="company-type[^"]*"[^>]*>([^<]+)', record)
         tags = re.findall(r'class="job-tag[^"]*"[^>]*>([^<]+)', record)
 
         title_text = clean_text(title.group(1)) if title else ""
@@ -94,6 +95,7 @@ def _extract_items(html: str) -> list[dict[str, Any]]:
             "salary": clean_text(salary.group(1)) if salary else "",
             "company": clean_text(comp.group(1)) if comp else "",
             "city": clean_text(addr.group(1)) if addr else "",
+            "companyType": clean_text(comp_type.group(1)) if comp_type else "",
             "tags": [clean_text(t) for t in tags if clean_text(t)],
         }
         items.append(appended)
@@ -199,12 +201,17 @@ class YingjieShengCollector(BaseCollector):
 
             job_id = item["jobId"]
             city = item["city"] or "全国"
-            # 学历从 tags 中提取
+            # 从 tags 中提取学历与实习时长
             education = ""
+            work_duration = ""
             for tag in tags:
-                if "本科" in tag or "硕士" in tag or "博士" in tag or "大专" in tag:
+                if not education and ("本科" in tag or "硕士" in tag or "博士" in tag or "大专" in tag):
                     education = tag
-                    break
+                if not work_duration and re.search(r'\d+天/\s*周', tag):
+                    work_duration = tag
+
+            # 公司类型/规模/行业（列表页字段）
+            company_type = clean_text(item.get("companyType", ""))
 
             # 发布日期：优先抓详情页真实发布日，抓不到则留空（前端不显示"今日新增"）
             published_at = ""
@@ -222,6 +229,11 @@ class YingjieShengCollector(BaseCollector):
 
                     time.sleep(DETAIL_DELAY_SECONDS)
 
+            # 摘要保留薪资；学历单独作为 education 字段展示
+            summary = item["salary"]
+            if education:
+                summary = f"{summary} · {education}"
+
             out.append(
                 {
                     "id": make_id(self.name, job_id),
@@ -231,8 +243,11 @@ class YingjieShengCollector(BaseCollector):
                     "city": city,
                     "type": "campus",  # 校招/实习
                     "category": "其他",
-                    "tags": [t for t in tags if not any(k in t for k in ("在校生", "应届生", "本科", "硕士", "博士", "大专"))][:5],
-                    "summary": f"{item['salary']} {'· ' + education if education else ''}",
+                    "tags": [t for t in tags if not any(k in t for k in ("在校生", "应届生", "本科", "硕士", "博士", "大专")) and not re.search(r'\d+天/\s*周', t)][:5],
+                    "summary": summary,
+                    "education": education,
+                    "workDuration": work_duration,
+                    "companyType": company_type,
                     "applyUrl": f"https://m.yingjiesheng.com/jobdetail/{job_id}",
                     "sourceUrl": f"https://m.yingjiesheng.com/jobdetail/{job_id}",
                     "source": self.name,

@@ -65,8 +65,10 @@ def test_extract_items():
         '<span class="job-salary">8千-1万</span>'
         '<span class="job-tag">在校生/应届生</span>'
         '<span class="job-tag">本科</span>'
+        '<span class="job-tag">5天/周·3个月</span>'
         '<span class="company-title ellipsis">日邮物流（中国）</span>'
         '<span class="company-address ellipsis">青岛</span>'
+        '<span class="company-type ellipsis">外资（非欧美）·1000-5000人·货运/物流/仓储</span>'
         '</a>'
         '<a href="https://m.yingjiesheng.com/jobdetail/173508904?property=x">'
         '<span class="job-title ellipsis">系统设计岗</span>'
@@ -75,6 +77,7 @@ def test_extract_items():
         '<span class="job-tag">博士</span>'
         '<span class="company-title ellipsis">前锦网络信息技术（上海）</span>'
         '<span class="company-address ellipsis">贵阳</span>'
+        '<span class="company-type ellipsis">已上市·5000-10000人·人力资源服务</span>'
         '</a>'
     )
     items = _extract_items(sample)
@@ -83,7 +86,10 @@ def test_extract_items():
     assert items[0]["company"] == "日邮物流（中国）"
     assert items[0]["city"] == "青岛"
     assert items[0]["jobId"] == "173231805"
+    assert items[0]["companyType"] == "外资（非欧美）·1000-5000人·货运/物流/仓储"
+    assert items[0]["tags"] == ["在校生/应届生", "本科", "5天/周·3个月"]
     assert items[1]["jobId"] == "173508904"
+    assert items[1]["companyType"] == "已上市·5000-10000人·人力资源服务"
 
 
 def test_extract_items_empty():

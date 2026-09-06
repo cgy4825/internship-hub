@@ -56,6 +56,9 @@
 | `category` | string | 是 | 岗位方向大类（技术/产品/运营/设计/市场/职能…） |
 | `tags` | string[] | 否 | 标签，用于筛选与搜索 |
 | `summary` | string | 否 | 一句话摘要（非正文，符合索引层原则） |
+| `education` | string | 否 | 学历要求（如 本科/硕士/博士/大专）。来源未提供则留空 |
+| `workDuration` | string | 否 | 实习周期/时长（如 `5天/周·3个月`）。仅实习岗可能提供，否则留空 |
+| `companyType` | string | 否 | 公司类型/规模/行业（如 `民营·1000-5000人·制药/生物工程`）。来源未提供则留空 |
 | `applyUrl` | string | 是 | 投递跳转链接（深链，指向官方渠道） |
 | `sourceUrl` | string | 否 | 信息原始页面链接 |
 | `source` | string | 是 | 来源标识，如 `nowcoder`、`company_website` |
