@@ -83,6 +83,8 @@ chore(data): 更新今日采集数据
 - 前端构建必须通过：`npm run build` 不得报错。
 - 前端代码尽量满足 ESLint 通过；至少不允许明显未使用的变量/错误。
 - 数据采集器输出必须符合 [`docs/data/schema.md`](../data/schema.md) 定义的 schema，否则视为失败。
+- 修改爬虫解析逻辑（`collector/sources/*` 的解析函数）必须运行单测：
+  `python collector/tests/test_yingjiesheng.py`，须全部通过。
 
 ## 6. 文档要求
 

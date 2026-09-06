@@ -227,3 +227,35 @@
 ### 遗留问题
 - 关键词页每页返回约 10 条，可进一步接分页 API 以继续扩充；当前 40+ 条已满足日常更新。
 - RSS 的 `SITE_LINK` 仍为占位域名。
+
+---
+
+## 阶段 8：关键 P0 问题修复（2025-06-10）
+
+### 前置条件
+- 阶段 7 数据量扩充完成。代码走查发现三个 P0 级问题：今日新增伪造、标题与数据不符、采集器无测试与零条告警。
+
+### 目标
+修复影响「产品可信度」的三个关键问题。
+
+### 产出与修复
+1. **今日新增不再伪造**（`yingjiesheng.py` / `date.ts` / `InternCard.tsx` / `validate.py` / `schema.md`）：
+   - 采集器新增详情页发布日期提取（`jobInfo-update` → `_parse_pubdate`），仅当来源提供真实发布日才写入 `publishedAt`；
+   - 抓取失败则 `publishedAt` 留空，`FETCH_DETAIL_PUBDATE` 可关闭；
+   - schema 将 `publishedAt` 从必填改为可选；前端 `isToday`/`relativeTime` 对空值恒为 false/空，卡片不显示"今日新增"与误导时间；
+   - 结果：一次采集 45 条中 34 条有真实发布日、11 条诚实留空，UI 不再伪造。
+2. **标题名实相符**（`App.tsx` / `index.html` / `README.md` / docs）：
+   - 标题/副标题/Hero/页脚由「大厂实习」统一调整为「**校招实习信息聚合**」，说明「含知名大厂及其他优质用人单位」，与真实数据来源一致。
+3. **采集器单元测试 + 零条告警**（`tests/test_yingjiesheng.py` / `run.py` / `collect-daily.yml`）：
+   - 新增 `_is_campus` / `_parse_pubdate` / `_extract_items` 等 7 项单测（纯函数，不联网），保护解析逻辑防网站改版失效；
+   - `run.py` 记录每源抓取数量并输出 `stats`（含 `alert`），空源/无有效岗位时退出码置 1；
+   - `collect-daily.yml` 捕获退出码，异常时**创建 GitHub Issue 告警**，避免静默失效。
+
+### 验证方式
+- `python collector/tests/test_yingjiesheng.py` → **7/7 通过**。
+- `python collector/run.py` → 正常产出 44 条，`stats.alert=false`、退出码 0。
+- `npm run build` 通过；headless 截图确认「今日新增」仅出现在真实当天发布岗位，其余显示真实相对时间；标题已更新。
+
+### 遗留问题
+- 详情页发布日期提取对部分职位不稳定（"X天内发布"需按天数近似），已通过"留空+前端不标今日"兜底。
+- 采集因抓详情页耗时增加（每条 0.5s 间隔），如需更快可关闭 `FETCH_DETAIL_PUBDATE`。

@@ -38,11 +38,14 @@ def build_dataset() -> dict:
     collected = utc_now()
     merged: list[dict] = []
     used_sources: list[str] = []
+    # 记录每个来源的抓取数量，用于「空源告警」
+    source_counts: dict[str, int] = {}
 
     for collector in get_collectors():
         try:
             raw_items = collector.collect()
-            print(f"[collect] {collector.name}: 抓到 {len(raw_items)} 条")
+            count = len(raw_items)
+            print(f"[collect] {collector.name}: 抓到 {count} 条")
         except Exception as exc:  # noqa: BLE001
             if not collector.tolerant:
                 raise
@@ -50,6 +53,7 @@ def build_dataset() -> dict:
             continue
 
         used_sources.append(collector.name)
+        source_counts[collector.name] = count
         for item in raw_items:
             if not isinstance(item, dict):
                 continue
@@ -77,11 +81,25 @@ def build_dataset() -> dict:
     if dups:
         print(f"[validate] 警告：存在重复 id {len(dups)} 个，已保留首个。")
 
+    # 空源告警：若主采集源抓到 0 条（可能网站改版/解析失效），在输出中标记，
+    # 供 CI 工作流检测并告警，避免"静默失效"。
+    empty_sources = [name for name, cnt in source_counts.items() if cnt == 0]
+    if empty_sources:
+        print(f"[alert] 警告：数据源抓取到 0 条（可能解析失效）：{', '.join(empty_sources)}")
+    elif not valid:
+        print("[alert] 警告：本次采集未产出任何有效岗位，请检查采集器是否失效。")
+
     return {
         "schemaVersion": SCHEMA_VERSION,
         "generatedAt": collected,
         "sources": used_sources,
         "items": valid,
+        "stats": {
+            "sourceCounts": source_counts,
+            "total": len(valid),
+            "emptySources": empty_sources,
+            "alert": bool(empty_sources) or not valid,
+        },
     }
 
 
@@ -114,6 +132,12 @@ def main() -> int:
     # 3) 生成 RSS 订阅源（提醒功能），同步到前端可服务路径
     write_rss(dataset, ROOT / "data" / "feed.xml")
     write_rss(dataset, ROOT / "web" / "public" / "feed.xml")
+
+    # 4) 空源/无数据告警：以非零退出码标记，供 CI 检测（collect-daily.yml）
+    stats = dataset.get("stats", {})
+    if stats.get("alert"):
+        print("[alert] 本次采集异常，退出码记为 1（供 CI 告警检测）。")
+        return 1
 
     return 0
 

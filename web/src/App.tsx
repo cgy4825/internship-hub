@@ -31,13 +31,13 @@ export default function App() {
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow">🏢</div>
             <div>
-              <h1 className="text-base font-bold leading-tight text-slate-900">大厂实习信息聚合</h1>
-              <p className="text-xs leading-tight text-slate-400">一键直达官方投递 · 每日更新</p>
+              <h1 className="text-base font-bold leading-tight text-slate-900">校招实习信息聚合</h1>
+              <p className="text-xs leading-tight text-slate-400">汇聚名企校招 · 每日更新</p>
             </div>
           </div>
           {!loading && !error && (
             <span className="hidden text-sm text-slate-500 sm:block">
-              共 <span className="font-semibold text-indigo-600">{items.length}</span> 个实习机会
+              共 <span className="font-semibold text-indigo-600">{items.length}</span> 个校招/实习机会
             </span>
           )}
         </div>
@@ -53,12 +53,12 @@ export default function App() {
               {sourcesLabel || '数据源聚合'}
             </span>
             <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl">
-              汇聚大厂实习机会
+              汇聚校招实习机会
               <br />
               让投递一步到位
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-indigo-50/90">
-              集中展示各大互联网/科技公司的实习信息，支持搜索、筛选、收藏，点击卡片即可跳转官方投递渠道。
+              集中展示各大公司公开的校招与实习信息（含知名大厂及其他优质用人单位），支持搜索、筛选、收藏，点击卡片即可跳转官方投递渠道。
             </p>
           </div>
           <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
@@ -101,7 +101,7 @@ export default function App() {
 
       <footer className="border-t border-slate-200 py-8">
         <div className="mx-auto max-w-6xl px-4 text-center text-xs text-slate-400 sm:px-6">
-          本站为实习信息聚合索引页，仅展示结构化元信息，点击将跳转至对应公司官方投递渠道。
+          本站为校招/实习信息聚合索引页，仅展示结构化元信息，点击将跳转至对应公司官方投递渠道。
           <br />
           数据每日更新，仅供参考，以官方发布为准。
         </div>

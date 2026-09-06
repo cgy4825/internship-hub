@@ -59,7 +59,7 @@
 | `applyUrl` | string | 是 | 投递跳转链接（深链，指向官方渠道） |
 | `sourceUrl` | string | 否 | 信息原始页面链接 |
 | `source` | string | 是 | 来源标识，如 `nowcoder`、`company_website` |
-| `publishedAt` | string | 是 | 发布日期（含时区）。用于「今日新增」判定 |
+| `publishedAt` | string | 否 | 发布日期。**来源能提供真实发布日时填写；否则留空**，此时前端不显示「今日新增」、不伪造时间 |
 | `collectedAt` | string | 是 | 采集时间（UTC） |
 | `isActive` | boolean | 是 | 是否仍有效（下架可置 false） |
 

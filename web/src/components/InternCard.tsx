@@ -88,13 +88,15 @@ export function InternCard({ item, favorite, onToggleFavorite }: InternCardProps
             {item.city && (
               <span>·</span>
             )}
-            <span className="inline-flex items-center gap-0.5">
-              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" />
-                <path d="M12 7v5l3 2" />
-              </svg>
-              {relativeTime(item.publishedAt)}
-            </span>
+            {relativeTime(item.publishedAt) && (
+              <span className="inline-flex items-center gap-0.5">
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+                {relativeTime(item.publishedAt)}
+              </span>
+            )}
           </div>
         </div>
       </div>

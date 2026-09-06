@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from typing import Any
 
+#: 必须非空的字段
 REQUIRED_FIELDS = [
     "id",
     "company",
@@ -16,9 +17,13 @@ REQUIRED_FIELDS = [
     "category",
     "applyUrl",
     "source",
-    "publishedAt",
     "collectedAt",
     "isActive",
+]
+
+#: 可选字段（可为空；publishedAt 未知时留空，前端据此不显示"今日新增"）
+OPTIONAL_FIELDS = [
+    "publishedAt",
 ]
 
 VALID_TYPES = {"internship", "campus", "other"}

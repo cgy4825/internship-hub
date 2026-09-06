@@ -1,12 +1,11 @@
 name: 每日采集更新
 
-# 每天定时运行采集器，抓取大厂实习信息，更新 JSON 与 RSS，并提交回仓库。
-# 这样静态站点每次构建都能读到最新的采集产物，实现「每日自动更新」。
+# 每天定时运行采集器，抓取校招/实习信息，更新 JSON 与 RSS，并提交回仓库。
+# 若采集到 0 条（可能解析失效），会创建 GitHub Issue 告警，避免静默失效。
 
 on:
   schedule:
     # 每天 08:00 (UTC) 运行，即北京时间 16:00。
-    # 可改为更频繁；注意遵守目标平台抓取频率与条款。
     - cron: '0 8 * * *'
   # 支持手动触发，便于调试
   workflow_dispatch:
@@ -14,9 +13,9 @@ on:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    # 赋予写入仓库的权限，用于提交采集产物
     permissions:
       contents: write
+      issues: write
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
@@ -26,20 +25,50 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: 运行采集器
+      - name: 运行采集器（记录退出码）
         working-directory: ./
         run: |
+          set +e
           python collector/run.py
+          echo "COLLECT_EXIT=$?" >> "$GITHUB_ENV"
 
       - name: 提交采集产物
+        # 无论采集是否告警，都尝试提交（保证数据可读，即使为空也保留上一份）
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/internships.json data/feed.xml web/public/data/internships.json web/public/feed.xml
-          # 仅在有变更时提交，避免空提交报错
           if git diff --cached --quiet; then
             echo "无数据变更，跳过提交"
           else
             git commit -m "chore(data): 每日采集更新 ${GITHUB_RUN_ID}"
             git push
           fi
+
+      - name: 采集异常告警（创建 Issue）
+        if: env.COLLECT_EXIT != '0'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const title = `⚠️ 采集告警（${new Date().toISOString()}）`;
+            const body = `## 采集器可能失效
+
+GitHub Actions 每日采集运行返回了非零退出码，说明本次采集统计到**空源或未产出有效岗位**。
+
+可能原因：
+- 数据源网站改版，导致 HTML 结构变化、解析失效
+- 数据源反爬/接口变动
+- 网络异常
+
+请检查：
+1. 在 Actions 里查看本工作流日志的 \`[alert]\` 提示
+2. 人工验证采集器：\`python collector/run.py\`
+
+仓库：[${context.repo.owner}/${context.repo.repo}](https://github.com/${context.repo.owner}/${context.repo.repo})`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+            });

@@ -19,6 +19,7 @@ from __future__ import annotations
 import re
 import urllib.parse
 import urllib.request
+from datetime import datetime, timedelta, timezone
 from typing import Any
 
 from ..base import BaseCollector, utc_now
@@ -39,6 +40,9 @@ HEADERS = {
 #: 目标页面：移动端首页（SSR 推荐流）
 HOME_URL = "https://m.yingjiesheng.com/"
 
+#: 职位详情页前缀（用于抓取真实发布日期）
+DETAIL_URL_PREFIX = "https://m.yingjiesheng.com/jobdetail/"
+
 #: 分类关键词搜索页（各返回一页，合并后扩充数据量）
 SEARCH_KEYWORDS = ["实习", "校招", "校园招聘", "管培生", "应届生"]
 
@@ -47,6 +51,12 @@ MAX_PER_PAGE = 60
 
 #: 总条数上限（防止一次抓太多）
 MAX_TOTAL = 120
+
+#: 是否抓取职位详情页以获取真实发布日期（若关闭，publishedAt 留空，前端不显示"今日新增"）
+FETCH_DETAIL_PUBDATE = True
+
+#: 详情页请求之间的最小间隔（秒），降低反爬风险
+DETAIL_DELAY_SECONDS = 0.5
 
 
 def _is_campus(tags: list[str]) -> bool:
@@ -89,6 +99,52 @@ def _extract_items(html: str) -> list[dict[str, Any]]:
         items.append(appended)
 
     return items
+
+
+def _parse_pubdate(text: str) -> str | None:
+    """从详情页 jobInfo-update 文本中解析发布时间。
+
+    支持格式：
+    - `2026-09-03发布`  / `2026/9/3发布`
+    - `09-03发布`（无年份，用当前年推断）
+    - `30天内发布`（用当天 - N 天计算近似日期）
+
+    解析失败返回 None（表示发布日未知，前端据此不显示"今日新增"）。
+    """
+    text = clean_text(text)
+    if not text:
+        return None
+
+    now = datetime.now(timezone.utc)
+
+    # 1) 含完整年份的日期
+    m = re.search(r'(20\d{2})[-/](\d{1,2})[-/](\d{1,2})发布', text)
+    if m:
+        year, month, day = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        return f"{year:04d}-{month:02d}-{day:02d}"
+
+    # 2) 无年份的 MM-DD发布（用当前年）
+    m = re.search(r'[-/]?(\d{1,2})[-/](\d{1,2})发布', text)
+    if m:
+        month, day = int(m.group(1)), int(m.group(2))
+        return f"{now.year:04d}-{month:02d}-{day:02d}"
+
+    # 3) X天内发布（用当天推算近似日期）
+    m = re.search(r'(\d+)\s*天内发布', text)
+    if m:
+        days = int(m.group(1))
+        approx = now - timedelta(days=days)
+        return f"{approx.year:04d}-{approx.month:02d}-{approx.day:02d}"
+
+    return None
+
+
+def _extract_pubdate_from_detail(html: str) -> str | None:
+    """从详情页 HTML 提取 jobInfo-update 元素的发布时间。"""
+    m = re.search(r'class="jobInfo-update[^"]*"[^>]*>([^<]+)', html)
+    if not m:
+        return None
+    return _parse_pubdate(m.group(1))
 
 
 class YingjieShengCollector(BaseCollector):
@@ -150,6 +206,22 @@ class YingjieShengCollector(BaseCollector):
                     education = tag
                     break
 
+            # 发布日期：优先抓详情页真实发布日，抓不到则留空（前端不显示"今日新增"）
+            published_at = ""
+            if FETCH_DETAIL_PUBDATE:
+                try:
+                    pub_html = self._fetch(f"{DETAIL_URL_PREFIX}{job_id}")
+                    pub = _extract_pubdate_from_detail(pub_html)
+                    if pub:
+                        published_at = pub
+                except Exception as exc:  # noqa: BLE001
+                    print(f"[yingjiesheng] 职位 {job_id} 详情页解析失败 ({exc})")
+                # 控制请求频率，降低反爬风险
+                if DETAIL_DELAY_SECONDS:
+                    import time
+
+                    time.sleep(DETAIL_DELAY_SECONDS)
+
             out.append(
                 {
                     "id": make_id(self.name, job_id),
@@ -164,7 +236,7 @@ class YingjieShengCollector(BaseCollector):
                     "applyUrl": f"https://m.yingjiesheng.com/jobdetail/{job_id}",
                     "sourceUrl": f"https://m.yingjiesheng.com/jobdetail/{job_id}",
                     "source": self.name,
-                    "publishedAt": collected,
+                    "publishedAt": published_at,
                     "collectedAt": collected,
                     "isActive": True,
                 }

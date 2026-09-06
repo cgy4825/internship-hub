@@ -10,7 +10,7 @@ export function parseDate(value: string): Date | null {
   return Number.isNaN(d.getTime()) ? null : d
 }
 
-/** 相对当前时间的人类可读描述，如「3 天前」「2 小时前」 */
+/** 相对当前时间的人类可读描述，如「3 天前」「2 小时前」。无有效日期返回空串。 */
 export function relativeTime(value: string): string {
   const d = parseDate(value)
   if (!d) return ''
@@ -26,7 +26,7 @@ export function relativeTime(value: string): string {
   return d.toLocaleDateString('zh-CN')
 }
 
-/** 是否为「今日新增」：与本地日期同日 */
+/** 是否为「今日新增」：与本地日期同日。无有效日期恒为 false（不伪造）。 */
 export function isToday(value: string): boolean {
   const d = parseDate(value)
   if (!d) return false
@@ -38,18 +38,20 @@ export function isToday(value: string): boolean {
   )
 }
 
-/** 是否为近 7 天内新增 */
+/** 是否为近 7 天内新增。无有效日期恒为 false。 */
 export function isWithinDays(value: string, days: number): boolean {
   const d = parseDate(value)
   if (!d) return false
   return Date.now() - d.getTime() <= days * DAY_MS
 }
 
-/** 按发布时间倒序排序，返回新数组 */
+/** 按发布时间倒序排序（无日期排在后），返回新数组 */
 export function sortByPublishedDesc<T extends { publishedAt: string }>(
   items: T[],
 ): T[] {
-  return [...items].sort(
-    (a, b) => parseDate(b.publishedAt)!.getTime() - parseDate(a.publishedAt)!.getTime(),
-  )
+  return [...items].sort((a, b) => {
+    const ta = parseDate(a.publishedAt)?.getTime() ?? 0
+    const tb = parseDate(b.publishedAt)?.getTime() ?? 0
+    return tb - ta
+  })
 }
