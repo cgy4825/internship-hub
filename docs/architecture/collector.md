@@ -57,6 +57,9 @@ class BaseCollector:
 - 数据来源为 `https://m.yingjiesheng.com/`（51job 旗下，移动端 SSR 页结构稳定、数据真实）。
 - 抓取并解析职位条目（jobdetail 深链），提取 title/salary/company/city/tags 等元信息。
 - **只保留校招/实习**：通过 tags 中「在校生/应届生」判定；其余社招岗位丢弃。
+- **多页面扩充数据量**：抓取移动端首页推荐流 + 多个分类关键词搜索页
+  （`/searchresult/k实习`、`k校招`、`k校园招聘`、`k管培生`、`k应届生`），
+  合并后**按 jobid 去重**，稳定扩充到约 40+ 条校招/实习岗位。
 - 满足「只要校招/实习信息、不限于大厂」的定位。
 
 ### 已停用

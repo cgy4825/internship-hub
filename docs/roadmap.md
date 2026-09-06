@@ -13,7 +13,8 @@
 ## 下一步（P1）
 
 - [x] **接入真实有效数据源**：接入**应届生求职网（51job）**为主力源，提供真实校招/实习岗位（`yingjiesheng`）。
-  - [ ] 扩充数据量：扩展 `/searchresult/k实习` 等分类入口或分页，稳定获取更多校招/实习岗位。
+  - [x] **扩充数据量**：抓取首页推荐流 + 多个分类关键词搜索页并合并去重，单次约 40+ 条校招/实习。
+  - [ ] （可选）进一步接分页 API / 更多关键词，继续扩充；补充大厂白名单过滤。
   - [ ] （可选）补充各公司**官方校招网站**（`company_website`，公开接口多为社招，实习需单独适配）。
 - [x] **每日自动更新**：配置 GitHub Actions cron 定时运行采集器并提交 JSON（`.github/workflows/collect-daily.yml`）。
 - [x] **部署到 Vercel / GitHub Pages**（免费静态托管，配置见 `web/vercel.json` 与 `.github/workflows/deploy-pages.yml`）。
