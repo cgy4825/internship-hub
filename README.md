@@ -33,8 +33,31 @@ internship-hub/
 ```bash
 cd web
 npm install
-npm run dev
+npm run dev        # 开发服务器：http://localhost:5300
 ```
+
+> 开发端口已在 `web/vite.config.ts` 中固定为 5300，并开启局域网访问（`host: true`），
+> 同一 WiFi 下可用 `http://<电脑IP>:5300` 在手机上进行调试。
+
+## 数据采集
+
+```bash
+python collector/run.py
+```
+
+采集产物会写入 `data/internships.json`（单一事实来源）并同步到 `web/public/data/`，
+同时生成 RSS 订阅源 `data/feed.xml`。见 [`docs/architecture/collector.md`](docs/architecture/collector.md)。
+
+## 生产构建与部署
+
+```bash
+cd web
+npm run build      # 产物输出到 web/dist
+npm run preview    # 预览产物：http://localhost:4173
+```
+
+- **Vercel**：仓库根配置见 `web/vercel.json`（静态托管，近零成本）。
+- **GitHub Pages**：`.github/workflows/deploy-pages.yml` 在推送到 `main` 时自动构建发布。
 
 ## 文档
 

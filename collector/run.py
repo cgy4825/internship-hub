@@ -26,6 +26,7 @@ from collector.normalize import (  # noqa: E402
     normalize_company,
 )
 from collector.registry import get_collectors  # noqa: E402
+from collector.rss import generate_feed  # noqa: E402
 from collector.validate import check_unique_ids, validate_items  # noqa: E402
 
 #: schema 版本，需与 docs/data/schema.md 及前端 types 一致
@@ -91,6 +92,15 @@ def write_json(dataset: dict, path: Path) -> None:
     print(f"[output] 已写入 {path}（{len(dataset['items'])} 条）")
 
 
+def write_rss(dataset: dict, path: Path) -> None:
+    """生成并写入 RSS 订阅源。"""
+    xml = generate_feed(dataset)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as f:
+        f.write(xml)
+    print(f"[rss] 已写入 {path}")
+
+
 def main() -> int:
     dataset = build_dataset()
 
@@ -100,6 +110,10 @@ def main() -> int:
     # 2) 同步到前端可服务路径 web/public/data/internships.json
     #    使静态站点（fetch /data/internships.json）能读取到采集产物
     write_json(dataset, ROOT / "web" / "public" / "data" / "internships.json")
+
+    # 3) 生成 RSS 订阅源（提醒功能），同步到前端可服务路径
+    write_rss(dataset, ROOT / "data" / "feed.xml")
+    write_rss(dataset, ROOT / "web" / "public" / "feed.xml")
 
     return 0
 

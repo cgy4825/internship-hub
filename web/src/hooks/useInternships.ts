@@ -5,7 +5,7 @@
 import { useEffect, useState } from 'react'
 import type { InternshipDataset, InternshipItem } from '../types/internship'
 
-const DATA_URL = '/data/internships.json'
+const DATA_URL = `${import.meta.env.BASE_URL}data/internships.json`
 
 interface UseInternshipsResult {
   items: InternshipItem[]

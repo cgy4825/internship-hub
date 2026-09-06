@@ -1,0 +1,45 @@
+name: 每日采集更新
+
+# 每天定时运行采集器，抓取大厂实习信息，更新 JSON 与 RSS，并提交回仓库。
+# 这样静态站点每次构建都能读到最新的采集产物，实现「每日自动更新」。
+
+on:
+  schedule:
+    # 每天 08:00 (UTC) 运行，即北京时间 16:00。
+    # 可改为更频繁；注意遵守目标平台抓取频率与条款。
+    - cron: '0 8 * * *'
+  # 支持手动触发，便于调试
+  workflow_dispatch:
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    # 赋予写入仓库的权限，用于提交采集产物
+    permissions:
+      contents: write
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 运行采集器
+        working-directory: ./
+        run: |
+          python collector/run.py
+
+      - name: 提交采集产物
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/internships.json data/feed.xml web/public/data/internships.json web/public/feed.xml
+          # 仅在有变更时提交，避免空提交报错
+          if git diff --cached --quiet; then
+            echo "无数据变更，跳过提交"
+          else
+            git commit -m "chore(data): 每日采集更新 ${GITHUB_RUN_ID}"
+            git push
+          fi

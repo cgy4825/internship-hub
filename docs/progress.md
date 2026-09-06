@@ -129,3 +129,35 @@
 
 ### 遗留问题
 - 待补齐 `company_website` 真实源与「提醒（RSS）」功能，见 [`roadmap.md`](./roadmap.md)。
+
+---
+
+## 阶段 5：提醒（RSS）、每日自动更新与部署配置（2025-06-10）
+
+### 前置条件
+- 阶段 4 端到端链路已打通；MVP v0.1 已提交。
+
+### 目标
+补齐「每日更新」「提醒」「可部署」三块能力，健全工程设计。
+
+### 产出
+- **RSS 提醒**：新增 [`collector/rss.py`](../collector/rss.py)（RSS 2.0 生成器）。
+  `run.py` 采集后生成 `data/feed.xml` 并同步到 `web/public/feed.xml`，供订阅源使用；并同步一份到 `data/`。
+- **每日自动更新**：[`.github/workflows/collect-daily.yml`](../.github/workflows/collect-daily.yml)，
+  GitHub Actions 每天定时（cron `0 8 * * *`）运行采集器并自动提交采集产物，实现「每日更新」。
+- **部署配置**：
+  - `web/vercel.json` —— Vercel 静态托管配置（免费，近零成本）。
+  - [`.github/workflows/deploy-pages.yml`](../.github/workflows/deploy-pages.yml) —— GitHub Pages 自动构建发布。
+- **前端数据路径修复**：`useInternships.ts` 改用 `import.meta.env.BASE_URL` 拼接数据路径，
+  兼容 Vercel（根路径）与 GitHub Pages（子路径 `/repo/`）两种部署，修复潜在部署缺陷。
+- **开发端口固定**：`web/vite.config.ts` 设定 `server.port = 5300` 且 `host: true`（局域网调试）。
+
+### 验证方式
+- `python collector/run.py` 成功：JSON + RSS 均产出，`feed.xml` 解析为合法 RSS（12 条 item）。
+- `npm run build` 通过；`dist/` 包含 `data/internships.json` 与 `feed.xml`。
+- dev 服务器重启后监听 **5300**；HTTP 200，`/data/internships.json` 返回 12 条；`5173` 已失效（符合预期）。
+- 两个 workflow YAML 结构规范（GitHub Actions 标准 schema）。
+
+### 遗留问题（重要）
+- 真实数据源（`company_website` 等）与牛客招聘接口仍未接入；当前主数据来自 `seed` 演示源。
+  这是下一步 P1 的关键工作。RSS 的 `SITE_LINK` 为占位域名，上线后需替换为实际站点地址。

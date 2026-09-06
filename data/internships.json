@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-09-06T07:36:57.363303Z",
+  "generatedAt": "2026-09-06T07:41:13.629708Z",
   "sources": [
     "nowcoder",
     "seed"
@@ -23,8 +23,8 @@
       "applyUrl": "https://jobs.bytedance.com/experienced/position/example-001",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-09-06T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-09-06T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -44,8 +44,8 @@
       "applyUrl": "https://careers.tencent.com/jobdesc.html?postId=example-002",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-09-06T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-09-06T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -65,8 +65,8 @@
       "applyUrl": "https://talent.alibaba.com/off-campus/position-detail?lang=zh&positionId=example-003",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-09-05T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-09-05T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -86,8 +86,8 @@
       "applyUrl": "https://zhaopin.meituan.com/web/position/detail?jobSequence=example-004",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-09-05T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-09-05T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -106,8 +106,8 @@
       "applyUrl": "https://careers.pinduoduo.com/jobs/detail/example-005",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-09-04T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-09-04T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -127,8 +127,8 @@
       "applyUrl": "https://game.163.com/recruitment/internship/detail/example-006",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-09-03T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-09-03T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -147,8 +147,8 @@
       "applyUrl": "https://zhaopin.jd.com/web/job/internship/detail/example-007",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-09-02T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-09-02T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -168,8 +168,8 @@
       "applyUrl": "https://talent.baidu.com/jobs/detail/example-008",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-09-01T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-09-01T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -188,8 +188,8 @@
       "applyUrl": "https://job.xiaohongshu.com/jobs/detail/example-009",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-08-31T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-08-31T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -208,8 +208,8 @@
       "applyUrl": "https://jobs.bilibili.com/social/position/detail/example-010",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-08-30T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-08-30T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -229,8 +229,8 @@
       "applyUrl": "https://zhaopin.kuaishou.cn/recruit/e/#/jobDetail/example-011",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-08-29T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-08-29T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     },
     {
@@ -249,8 +249,8 @@
       "applyUrl": "https://talent.didiglobal.com/jobs/detail/example-012",
       "sourceUrl": "",
       "source": "seed",
-      "publishedAt": "2026-08-28T15:36:58.079734+08:00",
-      "collectedAt": "2026-09-06T07:36:58.079707Z",
+      "publishedAt": "2026-08-28T15:41:15.176890+08:00",
+      "collectedAt": "2026-09-06T07:41:15.176876Z",
       "isActive": true
     }
   ]

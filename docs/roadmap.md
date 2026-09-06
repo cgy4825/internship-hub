@@ -15,9 +15,9 @@
 - [ ] **接入真实有效数据源**：
   - 接入各公司**官方校招/招聘网站**（补全 `company_website` 源，字节/腾讯/阿里/美团等）。
   - 牛客网改为抓取**招聘/实习接口或板块**，替代噪声较多的讨论区；扩充公司名抽取。
-- [ ] **每日自动更新**：配置 GitHub Actions cron 定时运行采集器并提交 JSON。
-- [ ] **部署到 Vercel / GitHub Pages**（免费静态托管）。
-- [ ] **提醒功能**：生成 RSS feed（静态文件即可），供订阅。
+- [x] **每日自动更新**：配置 GitHub Actions cron 定时运行采集器并提交 JSON（`.github/workflows/collect-daily.yml`）。
+- [x] **部署到 Vercel / GitHub Pages**（免费静态托管，配置见 `web/vercel.json` 与 `.github/workflows/deploy-pages.yml`）。
+- [x] **提醒功能**：生成 RSS feed（`data/feed.xml`，静态文件即可），供订阅。
 
 ## 后续（P2）
 
