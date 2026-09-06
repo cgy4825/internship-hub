@@ -37,6 +37,19 @@ HEADERS = {
     "Accept-Language": "zh-CN,zh;q=0.9",
 }
 
+#: 备用（桌面）请求头：部分页面对移动端 UA 不友好，失败时可回退
+DESKTOP_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+}
+
+#: 请求重试次数（网络抖动/反爬偶发失败时重试）
+MAX_RETRIES = 3
+
 #: 目标页面：移动端首页（SSR 推荐流）
 HOME_URL = "https://m.yingjiesheng.com/"
 
@@ -183,10 +196,23 @@ class YingjieShengCollector(BaseCollector):
         return self._to_schema(deduped)
 
     def _fetch(self, url: str) -> str:
-        req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            raw = resp.read()
-        return raw.decode("utf-8", errors="ignore")
+        """抓取 URL 内容，带重试与 UA 回退，提升云端采集成功率。"""
+        import time
+
+        last_exc: Exception | None = None
+        for attempt in range(MAX_RETRIES):
+            for headers in (HEADERS, DESKTOP_HEADERS):
+                try:
+                    req = urllib.request.Request(url, headers=headers)
+                    with urllib.request.urlopen(req, timeout=25) as resp:
+                        raw = resp.read()
+                    return raw.decode("utf-8", errors="ignore")
+                except Exception as exc:  # noqa: BLE001
+                    last_exc = exc
+                    # 仅重试一次 UA；两次都失败则短暂退避后再试
+                    if attempt < MAX_RETRIES - 1:
+                        time.sleep(1)  # 退避，降低反爬/限流
+        raise last_exc if last_exc else RuntimeError(f"抓取失败: {url}")
 
     def _to_schema(self, raw_items: list[dict[str, Any]]) -> list[dict[str, Any]]:
         """归一化为 schema 条目；仅保留校招/实习。"""
