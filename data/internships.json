@@ -1,30 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-09-06T08:35:21.005045Z",
+  "generatedAt": "2026-09-06T08:47:50.956401Z",
   "sources": [
     "yingjiesheng"
   ],
   "items": [
-    {
-      "id": "yingjiesheng_59b770b582",
-      "company": "日邮物流（中国）",
-      "companyEn": "",
-      "title": "物流培训生（天津）MJ000307",
-      "city": "天津",
-      "type": "campus",
-      "category": "其他",
-      "tags": [],
-      "summary": "8千-1万 · 本科",
-      "education": "本科",
-      "workDuration": "",
-      "companyType": "外资（非欧美）·1000-5000人·货运/物流/仓储",
-      "applyUrl": "https://m.yingjiesheng.com/jobdetail/173231786",
-      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173231786",
-      "source": "yingjiesheng",
-      "publishedAt": "2026-08-07",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
-      "isActive": true
-    },
     {
       "id": "yingjiesheng_0878669c25",
       "company": "前锦网络信息技术（上海）",
@@ -48,7 +28,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173508904",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-03",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -74,7 +54,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173508118",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-03",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -100,7 +80,53 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173508699",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-03",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
+      "isActive": true
+    },
+    {
+      "id": "yingjiesheng_35ec88cfd2",
+      "company": "中交一航局生态工程",
+      "companyEn": "",
+      "title": "党群管理岗",
+      "city": "深圳-光明区",
+      "type": "campus",
+      "category": "其他",
+      "tags": [
+        "新闻学",
+        "汉语言文学",
+        "英语"
+      ],
+      "summary": "8-9千 · 本科",
+      "education": "本科",
+      "workDuration": "",
+      "companyType": "国企·建筑/建材/工程",
+      "applyUrl": "https://m.yingjiesheng.com/jobdetail/167620855",
+      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/167620855",
+      "source": "yingjiesheng",
+      "publishedAt": "2026-08-07",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
+      "isActive": true
+    },
+    {
+      "id": "yingjiesheng_cfcc390939",
+      "company": "无印良品（上海）商业",
+      "companyEn": "",
+      "title": "店铺正式员工/店员/营业员(深圳ONE AVENUE)",
+      "city": "深圳",
+      "type": "campus",
+      "category": "其他",
+      "tags": [
+        "初中及以下"
+      ],
+      "summary": "5-7千",
+      "education": "",
+      "workDuration": "",
+      "companyType": "外资（非欧美）·1000-5000人·批发/零售",
+      "applyUrl": "https://m.yingjiesheng.com/jobdetail/147357505",
+      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/147357505",
+      "source": "yingjiesheng",
+      "publishedAt": "",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -126,55 +152,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/172881976",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
-      "isActive": true
-    },
-    {
-      "id": "yingjiesheng_0ef64a4d5e",
-      "company": "深圳中电港技术",
-      "companyEn": "",
-      "title": "客户服务专员（管培生）",
-      "city": "深圳",
-      "type": "campus",
-      "category": "其他",
-      "tags": [
-        "销售业务跟单"
-      ],
-      "summary": "1-1.1万·15薪 · 硕士",
-      "education": "硕士",
-      "workDuration": "",
-      "companyType": "国企·1000-5000人·电子/半导体/集成电路",
-      "applyUrl": "https://m.yingjiesheng.com/jobdetail/172476339",
-      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/172476339",
-      "source": "yingjiesheng",
-      "publishedAt": "2026-08-31",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
-      "isActive": true
-    },
-    {
-      "id": "yingjiesheng_2161f07163",
-      "company": "川财证券",
-      "companyEn": "",
-      "title": "投行业务实习生",
-      "city": "深圳",
-      "type": "campus",
-      "category": "其他",
-      "tags": [
-        "办公软件",
-        "金融",
-        "会计",
-        "尽职调查",
-        "法律"
-      ],
-      "summary": "50元/天 · 本科",
-      "education": "本科",
-      "workDuration": "",
-      "companyType": "国企·150-500人·证券/期货",
-      "applyUrl": "https://m.yingjiesheng.com/jobdetail/171768590",
-      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/171768590",
-      "source": "yingjiesheng",
-      "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -199,7 +177,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/136664028",
       "source": "yingjiesheng",
       "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -225,7 +203,30 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/168958671",
       "source": "yingjiesheng",
       "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
+      "isActive": true
+    },
+    {
+      "id": "yingjiesheng_f4db0eb53d",
+      "company": "上海浦东新区民办启乐德幼儿园",
+      "companyEn": "",
+      "title": "英语助理实习生",
+      "city": "上海-浦东新区",
+      "type": "campus",
+      "category": "其他",
+      "tags": [
+        "英语",
+        "免费工作餐"
+      ],
+      "summary": "200元/天 · 本科",
+      "education": "本科",
+      "workDuration": "3天/周·6个月",
+      "companyType": "民营·50-150人·学前教育/早教",
+      "applyUrl": "https://m.yingjiesheng.com/jobdetail/172986627",
+      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/172986627",
+      "source": "yingjiesheng",
+      "publishedAt": "",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -251,30 +252,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/172995754",
       "source": "yingjiesheng",
       "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
-      "isActive": true
-    },
-    {
-      "id": "yingjiesheng_b4b811a43c",
-      "company": "北京远大创新科技",
-      "companyEn": "",
-      "title": "芯片、半导体销售工程师",
-      "city": "北京-海淀区",
-      "type": "campus",
-      "category": "其他",
-      "tags": [
-        "电子信息工程",
-        "通信工程"
-      ],
-      "summary": "1-2万 · 本科",
-      "education": "本科",
-      "workDuration": "",
-      "companyType": "民营·500-1000人·电子/半导体/集成电路",
-      "applyUrl": "https://m.yingjiesheng.com/jobdetail/172315997",
-      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/172315997",
-      "source": "yingjiesheng",
-      "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -298,7 +276,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/147271686",
       "source": "yingjiesheng",
       "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -320,7 +298,33 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/162225374",
       "source": "yingjiesheng",
       "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
+      "isActive": true
+    },
+    {
+      "id": "yingjiesheng_c500a1d8d3",
+      "company": "睿励科学仪器（上海）",
+      "companyEn": "",
+      "title": "系统集成工程师（应届）",
+      "city": "上海-浦东新区",
+      "type": "campus",
+      "category": "其他",
+      "tags": [
+        "光学",
+        "光学工程",
+        "生日会",
+        "节假日",
+        "入职体检"
+      ],
+      "summary": "1-2万 · 硕士",
+      "education": "硕士",
+      "workDuration": "",
+      "companyType": "外资（非欧美）·150-500人·电子/半导体/集成电路",
+      "applyUrl": "https://m.yingjiesheng.com/jobdetail/173535766",
+      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173535766",
+      "source": "yingjiesheng",
+      "publishedAt": "2026-09-04",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -346,7 +350,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/170259347",
       "source": "yingjiesheng",
       "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -369,7 +373,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173529431",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -389,7 +393,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173533128",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -415,7 +419,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/172814481",
       "source": "yingjiesheng",
       "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -440,7 +444,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173532779",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -465,7 +469,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173534613",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -488,7 +492,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173529232",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -514,7 +518,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173361081",
       "source": "yingjiesheng",
       "publishedAt": "2026-08-07",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -540,7 +544,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173501289",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-02",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -566,7 +570,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173383190",
       "source": "yingjiesheng",
       "publishedAt": "2026-08-07",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -592,7 +596,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173488640",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-02",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -614,7 +618,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173541102",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-05",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -640,7 +644,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/167197643",
       "source": "yingjiesheng",
       "publishedAt": "2026-08-07",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -663,7 +667,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173541383",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-05",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -686,7 +690,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/134540437",
       "source": "yingjiesheng",
       "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -706,7 +710,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173541360",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-05",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -729,7 +733,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173542362",
       "source": "yingjiesheng",
       "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -755,47 +759,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/172894210",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-03",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
-      "isActive": true
-    },
-    {
-      "id": "yingjiesheng_d492408df2",
-      "company": "无锡先导智能装备",
-      "companyEn": "",
-      "title": "研发系统工程师（2027届校招）(J17849)",
-      "city": "重庆",
-      "type": "campus",
-      "category": "其他",
-      "tags": [],
-      "summary": "1-1.7万 · 本科",
-      "education": "本科",
-      "workDuration": "",
-      "companyType": "已上市·10000人以上·仪器仪表/工业自动化",
-      "applyUrl": "https://m.yingjiesheng.com/jobdetail/173531163",
-      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173531163",
-      "source": "yingjiesheng",
-      "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
-      "isActive": true
-    },
-    {
-      "id": "yingjiesheng_ae96ff39ab",
-      "company": "无锡先导智能装备",
-      "companyEn": "",
-      "title": "研发系统工程师（2027届校招）(J17849)",
-      "city": "杭州",
-      "type": "campus",
-      "category": "其他",
-      "tags": [],
-      "summary": "1-1.7万 · 本科",
-      "education": "本科",
-      "workDuration": "",
-      "companyType": "已上市·10000人以上·仪器仪表/工业自动化",
-      "applyUrl": "https://m.yingjiesheng.com/jobdetail/173530686",
-      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173530686",
-      "source": "yingjiesheng",
-      "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -815,7 +779,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173531077",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -835,7 +799,47 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173531201",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
+      "isActive": true
+    },
+    {
+      "id": "yingjiesheng_ae96ff39ab",
+      "company": "无锡先导智能装备",
+      "companyEn": "",
+      "title": "研发系统工程师（2027届校招）(J17849)",
+      "city": "杭州",
+      "type": "campus",
+      "category": "其他",
+      "tags": [],
+      "summary": "1-1.7万 · 本科",
+      "education": "本科",
+      "workDuration": "",
+      "companyType": "已上市·10000人以上·仪器仪表/工业自动化",
+      "applyUrl": "https://m.yingjiesheng.com/jobdetail/173530686",
+      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173530686",
+      "source": "yingjiesheng",
+      "publishedAt": "2026-09-04",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
+      "isActive": true
+    },
+    {
+      "id": "yingjiesheng_7c9cd5f17c",
+      "company": "无锡先导智能装备",
+      "companyEn": "",
+      "title": "研发系统工程师（2027届校招）(J17849)",
+      "city": "南京",
+      "type": "campus",
+      "category": "其他",
+      "tags": [],
+      "summary": "1-1.7万 · 本科",
+      "education": "本科",
+      "workDuration": "",
+      "companyType": "已上市·10000人以上·仪器仪表/工业自动化",
+      "applyUrl": "https://m.yingjiesheng.com/jobdetail/173530355",
+      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173530355",
+      "source": "yingjiesheng",
+      "publishedAt": "2026-09-04",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -861,7 +865,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173308297",
       "source": "yingjiesheng",
       "publishedAt": "2026-08-07",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -884,7 +888,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/172894220",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-03",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -904,7 +908,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173534868",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -924,32 +928,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173534932",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
-      "isActive": true
-    },
-    {
-      "id": "yingjiesheng_baa3f3065f",
-      "company": "上海太平洋房屋服务",
-      "companyEn": "",
-      "title": "本科优先 管培生 解决住宿",
-      "city": "上海",
-      "type": "campus",
-      "category": "其他",
-      "tags": [
-        "接受小白",
-        "五险一金",
-        "带薪休假",
-        "住宿"
-      ],
-      "summary": "8千-1.4万 · 大专",
-      "education": "大专",
-      "workDuration": "",
-      "companyType": "外资（非欧美）·5000-10000人·地产经纪/中介",
-      "applyUrl": "https://m.yingjiesheng.com/jobdetail/172939118",
-      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/172939118",
-      "source": "yingjiesheng",
-      "publishedAt": "",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -969,7 +948,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173533572",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -989,7 +968,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173535823",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -1009,7 +988,33 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173532830",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
+      "isActive": true
+    },
+    {
+      "id": "yingjiesheng_9a4a12bc83",
+      "company": "江苏远业液压机械",
+      "companyEn": "",
+      "title": "机械专业管培生/实习生",
+      "city": "南通",
+      "type": "campus",
+      "category": "其他",
+      "tags": [
+        "机械制造及自动化",
+        "机械设计制造及自动化",
+        "英语",
+        "职业发展",
+        "岗位培训"
+      ],
+      "summary": "7千-1.1万·13薪 · 大专",
+      "education": "大专",
+      "workDuration": "",
+      "companyType": "民营·50-150人·机械/设备/重工",
+      "applyUrl": "https://m.yingjiesheng.com/jobdetail/171526236",
+      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/171526236",
+      "source": "yingjiesheng",
+      "publishedAt": "",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -1033,7 +1038,7 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173529184",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-04",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     },
     {
@@ -1059,15 +1064,35 @@
       "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173486573",
       "source": "yingjiesheng",
       "publishedAt": "2026-09-02",
-      "collectedAt": "2026-09-06T08:35:24.739387Z",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
+      "isActive": true
+    },
+    {
+      "id": "yingjiesheng_93c42a5128",
+      "company": "无锡先导智能装备",
+      "companyEn": "",
+      "title": "研发系统工程师（2027届校招）(J17849)",
+      "city": "武汉",
+      "type": "campus",
+      "category": "其他",
+      "tags": [],
+      "summary": "1-1.7万 · 本科",
+      "education": "本科",
+      "workDuration": "",
+      "companyType": "已上市·10000人以上·仪器仪表/工业自动化",
+      "applyUrl": "https://m.yingjiesheng.com/jobdetail/173531049",
+      "sourceUrl": "https://m.yingjiesheng.com/jobdetail/173531049",
+      "source": "yingjiesheng",
+      "publishedAt": "2026-09-04",
+      "collectedAt": "2026-09-06T08:47:55.987405Z",
       "isActive": true
     }
   ],
   "stats": {
     "sourceCounts": {
-      "yingjiesheng": 45
+      "yingjiesheng": 46
     },
-    "total": 45,
+    "total": 46,
     "emptySources": [],
     "alert": false
   }
